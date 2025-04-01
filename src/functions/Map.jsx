@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
-import "/tourist-guide/leaflet/dist/leaflet.css";
-import "/tourist-guide/leaflet-routing-machine";
+import "leaflet/dist/leaflet.css";
+import "leaflet-routing-machine";
 
 function Map() {
   const mapRef = useRef(null);
