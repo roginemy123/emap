@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import "leaflet-routing-machine";
+import "/tourist-guide/leaflet/dist/leaflet.css";
+import "/tourist-guide/leaflet-routing-machine";
 
 function Map() {
   const mapRef = useRef(null);
@@ -111,9 +111,7 @@ function Map() {
   useEffect(() => {
     if (!mapRef.current) {
       mapRef.current = L.map("map").setView([10.3157, 123.8854], 10);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(mapRef.current);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(mapRef.current);
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
